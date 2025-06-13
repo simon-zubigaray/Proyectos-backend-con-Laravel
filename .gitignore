@@ -1,0 +1,35 @@
+# Archivos del sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+**/.env
+**/.env.backup
+**/.env.production
+**/auth.json
+
+# Configuraciones de IDEs y herramientas de desarrollo
+**/.idea/
+**/.vscode/
+**/.fleet/
+**/.zed/
+**/.nova/
+**/.phpactor.json
+**/.phpunit.result.cache
+**/.phpunit.cache
+
+# Laravel - Dependencias y builds
+**/vendor/
+**/node_modules/
+**/public/build/
+**/public/hot/
+**/public/storage/
+
+# Laravel - Archivos sensibles y temporales
+**/storage/*.key
+**/storage/pail/
+
+# Homestead
+**/Homestead.json
+**/Homestead.yaml
