@@ -20,7 +20,7 @@ class TaskService
     }
 
     // Traer tarea por id
-    public function getById(int $id): Task
+    public function show(int $id): Task
     {
         return Task::findOrFail($id);
     }

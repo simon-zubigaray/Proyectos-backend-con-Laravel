@@ -61,6 +61,12 @@ class TaskController extends Controller
         }
     }
 
+    public function show(int $id)
+    {
+        $task = $this->taskService->show($id);
+        return response()->json($task);
+    }
+
     public function getByStatus(string $status)
     {
         try {
