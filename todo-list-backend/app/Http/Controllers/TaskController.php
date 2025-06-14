@@ -20,7 +20,8 @@ class TaskController extends Controller
 
     public function index()
     {
-        $tasks = $this->taskService->getAll();
+        $user = auth()->user();
+        $tasks = $this->taskService->getAllTaskByUser($user->id);
 
         if(empty($tasks)){
             return response()->json(['error' => "No existen tareas."], Response::HTTP_NOT_FOUND);
@@ -33,6 +34,8 @@ class TaskController extends Controller
     {
         try {
             $task = $this->taskService->create($request->validated());
+            $validate['user_id'] = auth()->user()->id();
+
             return response()->json($task, Response::HTTP_CREATED);
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);

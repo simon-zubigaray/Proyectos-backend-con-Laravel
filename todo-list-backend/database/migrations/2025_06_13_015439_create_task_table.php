@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->enum('status', ['pendiente', 'completada', 'cancelada'])->default('pendiente');
+            $table->enum('status', ['pendiente', 'completada', 'cancelada']);
             $table->timestamps();
             $table->softDeletes();
         });

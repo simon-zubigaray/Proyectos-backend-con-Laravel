@@ -33,9 +33,9 @@ class TaskTableSeeder extends Seeder
                 'title' => $faker->word(),
                 'description' => $faker->sentence(),
                 'status' => $faker->randomElement([
-                        TaskStatus::PENDING->value, 
-                        TaskStatus::COMPLETED->value, 
-                        TaskStatus::CANCELED->value
+                        TaskStatus::PENDIENTE->value, 
+                        TaskStatus::COMPLETADO->value, 
+                        TaskStatus::CANCELADO->value
                     ]),
                 'user_id' => $faker->randomElement($usersId),
                 'created_at' => now(),

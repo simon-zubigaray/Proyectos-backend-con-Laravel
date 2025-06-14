@@ -22,8 +22,8 @@ class CreateTaskRequest extends ApiFormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'nullable|string|max:2000',
-            'status' => 'required|string',
-            'user_id' => 'required|exists:users,id'
+            'status' => 'required|in:pendiente,completada,cancelada',
+            //'user_id' => 'required|exists:users,id'
         ];
     }
 

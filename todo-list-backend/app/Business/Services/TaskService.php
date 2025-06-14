@@ -40,6 +40,12 @@ class TaskService
 
     /* Funciones extras al CRUD */
 
+    // Traer todas las tareas por usuario
+    public function getAllTaskByUser(int $id)
+    {
+        return Task::where('user_id', $id)->get();
+    }
+
     // Traer tareas por status
     public function getByStatus(string $status)
     {

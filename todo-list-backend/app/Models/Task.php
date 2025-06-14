@@ -12,7 +12,7 @@ class Task extends Model
 
     protected $table = 'task';
 
-    protected $fillable = ['title', 'description', 'status'];
+    protected $fillable = ['title', 'description', 'status', 'user_id'];
 
     protected $casts = [
         'status' => TaskStatus::class,

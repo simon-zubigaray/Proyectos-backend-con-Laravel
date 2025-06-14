@@ -25,7 +25,7 @@ class TaskFactory extends Factory
         return [
                 'title' => $this->faker->word(),
                 'description' => $this->faker->sentence(),
-                'status' => $this->faker->randomElement([TaskStatus::PENDING, TaskStatus::COMPLETED, TaskStatus::CANCELED]),
+                'status' => $this->faker->randomElement([TaskStatus::PENDIENTE, TaskStatus::COMPLETADO, TaskStatus::CANCELADO]),
                 'user_id' => User::factory()
         ];
     }
