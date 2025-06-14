@@ -21,6 +21,11 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = $this->taskService->getAll();
+
+        if(empty($tasks)){
+            return response()->json(['error' => "No existen tareas."], Response::HTTP_NOT_FOUND);
+        }
+
         return response()->json($tasks);
     }
 
@@ -70,7 +75,7 @@ class TaskController extends Controller
     public function getByStatus(string $status)
     {
         try {
-            if (!in_array($status, ['pending', 'completed', 'canceled'])) {
+            if (!in_array($status, ['pendiente', 'completada', 'cancelada'])) {
                 return response()->json(['error' => 'Estado inválido.'], Response::HTTP_BAD_REQUEST);
             }
 
